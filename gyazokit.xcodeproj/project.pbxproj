@@ -21,6 +21,8 @@
 		D54A74C8245FC5E700D9C817 /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C7245FC5E700D9C817 /* image.json */; };
 		D54A74CA245FC5F600D9C817 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C9245FC5F600D9C817 /* images.json */; };
 		D54A74CC245FC64100D9C817 /* Passwords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74CB245FC64100D9C817 /* Passwords.swift */; };
+		D54A74CF2460827D00D9C817 /* PasswordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74CE2460827D00D9C817 /* PasswordType.swift */; };
+		D54A74D12460829100D9C817 /* PasswordKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74D02460829100D9C817 /* PasswordKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		D54A74C7245FC5E700D9C817 /* image.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = image.json; sourceTree = "<group>"; };
 		D54A74C9245FC5F600D9C817 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
 		D54A74CB245FC64100D9C817 /* Passwords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passwords.swift; sourceTree = "<group>"; };
+		D54A74CE2460827D00D9C817 /* PasswordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordType.swift; sourceTree = "<group>"; };
+		D54A74D02460829100D9C817 /* PasswordKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 		D54A74BA245FC21700D9C817 /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				D54A74CD2460826800D9C817 /* Types */,
 				D54A74CB245FC64100D9C817 /* Passwords.swift */,
 			);
 			path = Security;
@@ -196,6 +201,15 @@
 				D54A74C9245FC5F600D9C817 /* images.json */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		D54A74CD2460826800D9C817 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				D54A74CE2460827D00D9C817 /* PasswordType.swift */,
+				D54A74D02460829100D9C817 /* PasswordKey.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +324,8 @@
 			files = (
 				D54A7493245FB65A00D9C817 /* ViewController.swift in Sources */,
 				D54A74CC245FC64100D9C817 /* Passwords.swift in Sources */,
+				D54A74CF2460827D00D9C817 /* PasswordType.swift in Sources */,
+				D54A74D12460829100D9C817 /* PasswordKey.swift in Sources */,
 				D54A748F245FB65A00D9C817 /* AppDelegate.swift in Sources */,
 				D54A7491245FB65A00D9C817 /* SceneDelegate.swift in Sources */,
 				D54A7499245FB65A00D9C817 /* gyazokit.xcdatamodeld in Sources */,

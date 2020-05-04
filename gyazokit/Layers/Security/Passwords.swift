@@ -24,23 +24,16 @@ final class Passwords {
   
   /// Saves a key/value pair to either the keychain or the user defaults
   @discardableResult
-  func save(key: String, value: String?, to type: PasswordsType) -> Bool {
+  func save(key: PasswordKey, value: String?, to type: PasswordType) -> Bool {
     guard let value = value else {
       return false
     }
     
     switch type {
       case .keychain:
-        Self.keychain[key] = value
+        Self.keychain[key.unlock()] = value
         return true
       default: return false
     }
-  }
-}
-
-extension Passwords {
-  enum PasswordsType {
-    case keychain
-    case defaults
   }
 }
