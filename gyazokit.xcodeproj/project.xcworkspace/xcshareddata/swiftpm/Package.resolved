@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess",
+        "state": {
+          "branch": null,
+          "revision": "3d0ea2c0806791abcc5d7f0d9f62f1cfd4a7264d",
+          "version": "4.2.0"
+        }
+      },
+      {
+        "package": "OAuth2",
+        "repositoryURL": "https://github.com/p2/Oauth2",
+        "state": {
+          "branch": null,
+          "revision": "b0c71466176f3d7a22e5da20532c01d78a661f1d",
+          "version": "5.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
