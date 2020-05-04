@@ -32,6 +32,9 @@
 		D54A74E52460BC7500D9C817 /* StackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74E42460BC7500D9C817 /* StackViewBuilder.swift */; };
 		D54A74E72460BE6B00D9C817 /* ButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74E62460BE6B00D9C817 /* ButtonBuilder.swift */; };
 		D54A74EA2460BF7100D9C817 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74E92460BF7100D9C817 /* UIFont+.swift */; };
+		D54A74ED2460C1BD00D9C817 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74EC2460C1BD00D9C817 /* UIColor+.swift */; };
+		D54A74EF2460C2BE00D9C817 /* LabelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74EE2460C2BE00D9C817 /* LabelBuilder.swift */; };
+		D54A74F12460C40A00D9C817 /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74F02460C40A00D9C817 /* LoginViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		D54A74E42460BC7500D9C817 /* StackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewBuilder.swift; sourceTree = "<group>"; };
 		D54A74E62460BE6B00D9C817 /* ButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBuilder.swift; sourceTree = "<group>"; };
 		D54A74E92460BF7100D9C817 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		D54A74EC2460C1BD00D9C817 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		D54A74EE2460C2BE00D9C817 /* LabelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBuilder.swift; sourceTree = "<group>"; };
+		D54A74F02460C40A00D9C817 /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,8 +200,8 @@
 		D54A74C3245FC59C00D9C817 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D54A74D52460B2EC00D9C817 /* Login */,
 				D54A74C4245FC5A600D9C817 /* Stub */,
+				D54A74D52460B2EC00D9C817 /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				D54A74D92460B30700D9C817 /* LoginView.swift */,
+				D54A74F02460C40A00D9C817 /* LoginViewDelegate.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -265,6 +272,7 @@
 			children = (
 				D54A74E42460BC7500D9C817 /* StackViewBuilder.swift */,
 				D54A74E62460BE6B00D9C817 /* ButtonBuilder.swift */,
+				D54A74EE2460C2BE00D9C817 /* LabelBuilder.swift */,
 			);
 			path = "View Builders";
 			sourceTree = "<group>";
@@ -272,9 +280,18 @@
 		D54A74E82460BF6500D9C817 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				D54A74EB2460C1B300D9C817 /* Colors */,
 				D54A74E92460BF7100D9C817 /* UIFont+.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		D54A74EB2460C1B300D9C817 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				D54A74EC2460C1BD00D9C817 /* UIColor+.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,15 +412,18 @@
 				D54A74CC245FC64100D9C817 /* Passwords.swift in Sources */,
 				D54A74D42460A55E00D9C817 /* Notification+Ext.swift in Sources */,
 				D54A74E52460BC7500D9C817 /* StackViewBuilder.swift in Sources */,
+				D54A74EF2460C2BE00D9C817 /* LabelBuilder.swift in Sources */,
 				D54A74CF2460827D00D9C817 /* PasswordType.swift in Sources */,
 				D54A74D12460829100D9C817 /* PasswordKey.swift in Sources */,
 				D54A748F245FB65A00D9C817 /* AppDelegate.swift in Sources */,
 				D54A74E72460BE6B00D9C817 /* ButtonBuilder.swift in Sources */,
+				D54A74ED2460C1BD00D9C817 /* UIColor+.swift in Sources */,
 				D54A74EA2460BF7100D9C817 /* UIFont+.swift in Sources */,
 				D54A74DA2460B30700D9C817 /* LoginView.swift in Sources */,
 				D54A7491245FB65A00D9C817 /* SceneDelegate.swift in Sources */,
 				D54A74DF2460B35200D9C817 /* GradientBackgroundLayer.swift in Sources */,
 				D54A7499245FB65A00D9C817 /* gyazokit.xcdatamodeld in Sources */,
+				D54A74F12460C40A00D9C817 /* LoginViewDelegate.swift in Sources */,
 				D54A74BC245FC22500D9C817 /* AuthManager.swift in Sources */,
 				D54A74BF245FC2C000D9C817 /* AuthInfo.swift in Sources */,
 				D54A74D72460B2F900D9C817 /* LoginViewController.swift in Sources */,
