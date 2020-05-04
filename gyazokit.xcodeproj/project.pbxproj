@@ -20,6 +20,7 @@
 		D54A74BF245FC2C000D9C817 /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74BE245FC2C000D9C817 /* AuthInfo.swift */; };
 		D54A74C8245FC5E700D9C817 /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C7245FC5E700D9C817 /* image.json */; };
 		D54A74CA245FC5F600D9C817 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C9245FC5F600D9C817 /* images.json */; };
+		D54A74CC245FC64100D9C817 /* Passwords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74CB245FC64100D9C817 /* Passwords.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D54A74BE245FC2C000D9C817 /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
 		D54A74C7245FC5E700D9C817 /* image.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = image.json; sourceTree = "<group>"; };
 		D54A74C9245FC5F600D9C817 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
+		D54A74CB245FC64100D9C817 /* Passwords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passwords.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,7 @@
 		D54A74B9245FC21100D9C817 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				D54A74C0245FC58500D9C817 /* New Group */,
+				D54A74C0245FC58500D9C817 /* Authentication */,
 				D54A74BA245FC21700D9C817 /* Security */,
 			);
 			path = Layers;
@@ -125,8 +127,7 @@
 		D54A74BA245FC21700D9C817 /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				D54A74BD245FC29200D9C817 /* Types */,
-				D54A74BB245FC22500D9C817 /* AuthManager.swift */,
+				D54A74CB245FC64100D9C817 /* Passwords.swift */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -139,11 +140,13 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
-		D54A74C0245FC58500D9C817 /* New Group */ = {
+		D54A74C0245FC58500D9C817 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				D54A74BD245FC29200D9C817 /* Types */,
+				D54A74BB245FC22500D9C817 /* AuthManager.swift */,
 			);
-			path = "New Group";
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		D54A74C1245FC58C00D9C817 /* Model */ = {
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54A7493245FB65A00D9C817 /* ViewController.swift in Sources */,
+				D54A74CC245FC64100D9C817 /* Passwords.swift in Sources */,
 				D54A748F245FB65A00D9C817 /* AppDelegate.swift in Sources */,
 				D54A7491245FB65A00D9C817 /* SceneDelegate.swift in Sources */,
 				D54A7499245FB65A00D9C817 /* gyazokit.xcdatamodeld in Sources */,

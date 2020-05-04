@@ -37,12 +37,12 @@ class AuthManager: ObservableObject {
   
   var loader: OAuth2DataLoader?
   
-  let controller = UIViewController()
-  
-  func authorize(in controller: UIViewController?) -> Future<Bool, Never> {
+  /// Make an `oauth` request against the `gyazo` API. Returns a future that promises to return either the access token (as a nullable string) or no error at all.
+  /// - Parameter controller: This controller represents the returning point for `oauth` once the webview handles the user's log in.
+  func authorize(in controller: UIViewController?) -> Future<String?, Never> {
     guard let controller = controller else {
-      return Future<Bool, Never> { seal in
-        seal(.success(false))
+      return Future<String?, Never> { seal in
+        seal(.success(nil))
       }
     }
     
@@ -51,14 +51,13 @@ class AuthManager: ObservableObject {
     
     self.loader = OAuth2DataLoader(oauth2: oauth2)
     
-    return Future<Bool, Never> { seal in
+    return Future<String?, Never> { seal in
       
       DispatchQueue.main.async {
         self.oauth2.authorize() { params, error in
           if let params = params, let accessToken = params["access_token"] as? String {
-//            Secure.keychain["access_token"] = accessToken
             print(params)
-            seal(.success(true))
+            seal(.success(accessToken))
           }
         }
       }

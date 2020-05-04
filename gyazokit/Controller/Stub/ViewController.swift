@@ -19,13 +19,16 @@ class ViewController: UIViewController {
   
   lazy var authManager: AuthManager = AuthManager()
   
+  lazy var passwords: Passwords = Passwords()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     view.backgroundColor = .green
     
-    authCancellable = authManager.authorize(in: self).sink { success in
-      print(success)
+    authCancellable = authManager.authorize(in: self).sink { [unowned self] accessToken in
+      guard let accessToken = accessToken else { return }
+      print(accessToken)
     }
   }
 }
