@@ -18,6 +18,8 @@
 		D54A74B8245FC1EF00D9C817 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D54A74B7245FC1EF00D9C817 /* KeychainAccess */; };
 		D54A74BC245FC22500D9C817 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74BB245FC22500D9C817 /* AuthManager.swift */; };
 		D54A74BF245FC2C000D9C817 /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74BE245FC2C000D9C817 /* AuthInfo.swift */; };
+		D54A74C8245FC5E700D9C817 /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C7245FC5E700D9C817 /* image.json */; };
+		D54A74CA245FC5F600D9C817 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C9245FC5F600D9C817 /* images.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		D54A74AA245FB65F00D9C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54A74BB245FC22500D9C817 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D54A74BE245FC2C000D9C817 /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
+		D54A74C7245FC5E700D9C817 /* image.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = image.json; sourceTree = "<group>"; };
+		D54A74C9245FC5F600D9C817 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +91,11 @@
 		D54A748D245FB65A00D9C817 /* gyazokit */ = {
 			isa = PBXGroup;
 			children = (
+				D54A74C5245FC5B000D9C817 /* App */,
+				D54A74C3245FC59C00D9C817 /* Controller */,
+				D54A74C2245FC59600D9C817 /* View */,
+				D54A74C1245FC58C00D9C817 /* Model */,
 				D54A74B9245FC21100D9C817 /* Layers */,
-				D54A748E245FB65A00D9C817 /* AppDelegate.swift */,
-				D54A7490245FB65A00D9C817 /* SceneDelegate.swift */,
-				D54A7492245FB65A00D9C817 /* ViewController.swift */,
 				D54A749A245FB65F00D9C817 /* Assets.xcassets */,
 				D54A749C245FB65F00D9C817 /* LaunchScreen.storyboard */,
 				D54A749F245FB65F00D9C817 /* Info.plist */,
@@ -111,18 +116,19 @@
 		D54A74B9245FC21100D9C817 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				D54A74BA245FC21700D9C817 /* Auth */,
+				D54A74C0245FC58500D9C817 /* New Group */,
+				D54A74BA245FC21700D9C817 /* Security */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
 		};
-		D54A74BA245FC21700D9C817 /* Auth */ = {
+		D54A74BA245FC21700D9C817 /* Security */ = {
 			isa = PBXGroup;
 			children = (
 				D54A74BD245FC29200D9C817 /* Types */,
 				D54A74BB245FC22500D9C817 /* AuthManager.swift */,
 			);
-			path = Auth;
+			path = Security;
 			sourceTree = "<group>";
 		};
 		D54A74BD245FC29200D9C817 /* Types */ = {
@@ -131,6 +137,62 @@
 				D54A74BE245FC2C000D9C817 /* AuthInfo.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		D54A74C0245FC58500D9C817 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D54A74C1245FC58C00D9C817 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D54A74C6245FC5C700D9C817 /* Stubs */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D54A74C2245FC59600D9C817 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D54A74C3245FC59C00D9C817 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D54A74C4245FC5A600D9C817 /* Stub */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D54A74C4245FC5A600D9C817 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				D54A7492245FB65A00D9C817 /* ViewController.swift */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		D54A74C5245FC5B000D9C817 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D54A748E245FB65A00D9C817 /* AppDelegate.swift */,
+				D54A7490245FB65A00D9C817 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D54A74C6245FC5C700D9C817 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				D54A74C7245FC5E700D9C817 /* image.json */,
+				D54A74C9245FC5F600D9C817 /* images.json */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D54A74C8245FC5E700D9C817 /* image.json in Resources */,
+				D54A74CA245FC5F600D9C817 /* images.json in Resources */,
 				D54A749E245FB65F00D9C817 /* LaunchScreen.storyboard in Resources */,
 				D54A749B245FB65F00D9C817 /* Assets.xcassets in Resources */,
 			);

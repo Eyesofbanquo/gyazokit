@@ -23,7 +23,7 @@ struct AuthResponse: Decodable {
   }
 }
 
-class OAuth: ObservableObject {
+class AuthManager: ObservableObject {
   
   let oauth2 = OAuth2CodeGrant(settings: [
     "client_id": AuthInfo.clientID,

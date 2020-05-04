@@ -6,17 +6,27 @@
 //  Copyright © 2020 Markim Shaw. All rights reserved.
 //
 
+import Combine
 import UIKit
 
 class ViewController: UIViewController {
-
+  
+  // MARK: - Receivers -
+  
+  var authCancellable: AnyCancellable?
+  
+  // MARK: - Layers -
+  
+  lazy var authManager: AuthManager = AuthManager()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     view.backgroundColor = .green
-    // Do any additional setup after loading the view.
+    
+    authCancellable = authManager.authorize(in: self).sink { success in
+      print(success)
+    }
   }
-
-
 }
 
