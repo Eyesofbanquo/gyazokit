@@ -19,11 +19,13 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
 			<key>CFBundleURLName</key>
-			<string>Gyazo</string>
+			<string>gyazokit</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.donderapps.gyazo</string>
+				<string>com.donderapps.gyazokit</string>
 			</array>
 		</dict>
 	</array>

@@ -26,10 +26,11 @@ class ViewController: UIViewController {
     
     view.backgroundColor = .green
     
-    authCancellable = authManager.authorize(in: self).sink { [unowned self] accessToken in
+    authCancellable = authManager.authorize(in: self).receive(on: DispatchQueue.main).sink(receiveValue: { [unowned self] accessToken in
       guard let accessToken = accessToken else { return }
-      print(accessToken)
-    }
+      
+      self.passwords.save(key: .accessToken, value: accessToken, to: .keychain)
+    })
   }
 }
 

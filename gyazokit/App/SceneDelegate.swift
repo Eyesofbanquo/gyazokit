@@ -24,6 +24,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = window
     self.window?.makeKeyAndVisible()
   }
+  
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    guard let url = URLContexts.first?.url else {
+      return
+    }
+    
+    NotificationCenter.default.post(name: .returnFromAuth, object: nil, userInfo: ["url": url])
+    
+    //    oauth.oauth2.handleRedirectURL(url)
+  }
 
   func sceneDidDisconnect(_ scene: UIScene) {
     // Called as the scene is being released by the system.

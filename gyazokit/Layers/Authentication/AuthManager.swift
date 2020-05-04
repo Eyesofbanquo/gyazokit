@@ -37,6 +37,14 @@ class AuthManager: ObservableObject {
   
   var loader: OAuth2DataLoader?
   
+  var returnFromAuthCancellable: AnyCancellable?
+  
+  // MARK: - Init -
+  
+  init() {
+    setupCallbackFromOAuth()
+  }
+  
   /// Make an `oauth` request against the `gyazo` API. Returns a future that promises to return either the access token (as a nullable string) or no error at all.
   /// - Parameter controller: This controller represents the returning point for `oauth` once the webview handles the user's log in.
   func authorize(in controller: UIViewController?) -> Future<String?, Never> {
@@ -45,9 +53,12 @@ class AuthManager: ObservableObject {
         seal(.success(nil))
       }
     }
-    
+        
+    let storage = HTTPCookieStorage.shared
+    storage.cookies?.forEach() { storage.deleteCookie($0) }
     oauth2.authConfig.authorizeEmbedded = true
     oauth2.authConfig.authorizeContext = controller
+    
     
     self.loader = OAuth2DataLoader(oauth2: oauth2)
     
@@ -61,6 +72,15 @@ class AuthManager: ObservableObject {
           }
         }
       }
+    }
+  }
+  
+  /// This function is the `callback` from the `SceneDelegate` once the user finishes logging in/cancelling from the safari view presented for logging in.
+  private func setupCallbackFromOAuth() {
+    self.returnFromAuthCancellable = NotificationCenter.default.publisher(for: .returnFromAuth).sink { notification in
+      guard let url = notification.userInfo?["url"] as? URL else { return } // needs error handling
+      
+      self.oauth2.handleRedirectURL(url)
     }
   }
 }
