@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		D54A749B245FB65F00D9C817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A749A245FB65F00D9C817 /* Assets.xcassets */; };
 		D54A749E245FB65F00D9C817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54A749C245FB65F00D9C817 /* LaunchScreen.storyboard */; };
 		D54A74A9245FB65F00D9C817 /* gyazokitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74A8245FB65F00D9C817 /* gyazokitTests.swift */; };
+		D54A74B5245FC1DD00D9C817 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = D54A74B4245FC1DD00D9C817 /* OAuth2 */; };
+		D54A74B8245FC1EF00D9C817 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D54A74B7245FC1EF00D9C817 /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D54A74B8245FC1EF00D9C817 /* KeychainAccess in Frameworks */,
+				D54A74B5245FC1DD00D9C817 /* OAuth2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +119,10 @@
 			dependencies = (
 			);
 			name = gyazokit;
+			packageProductDependencies = (
+				D54A74B4245FC1DD00D9C817 /* OAuth2 */,
+				D54A74B7245FC1EF00D9C817 /* KeychainAccess */,
+			);
 			productName = gyazokit;
 			productReference = D54A748B245FB65A00D9C817 /* gyazokit.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +173,10 @@
 				Base,
 			);
 			mainGroup = D54A7482245FB65A00D9C817;
+			packageReferences = (
+				D54A74B3245FC1DD00D9C817 /* XCRemoteSwiftPackageReference "Oauth2" */,
+				D54A74B6245FC1EF00D9C817 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = D54A748C245FB65A00D9C817 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -461,6 +473,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D54A74B3245FC1DD00D9C817 /* XCRemoteSwiftPackageReference "Oauth2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/p2/Oauth2";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		D54A74B6245FC1EF00D9C817 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D54A74B4245FC1DD00D9C817 /* OAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D54A74B3245FC1DD00D9C817 /* XCRemoteSwiftPackageReference "Oauth2" */;
+			productName = OAuth2;
+		};
+		D54A74B7245FC1EF00D9C817 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D54A74B6245FC1EF00D9C817 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D54A7497245FB65A00D9C817 /* gyazokit.xcdatamodeld */ = {
