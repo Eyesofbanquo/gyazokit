@@ -26,8 +26,10 @@ class ViewController: UIViewController {
     
     view.backgroundColor = .green
     
-    authCancellable = authManager.authorize(in: self).receive(on: DispatchQueue.main).sink(receiveValue: { accessToken in
-      print(accessToken)
+    authCancellable = authManager.authorize(in: self).receive(on: DispatchQueue.main).sink(receiveValue: { [unowned self] accessToken in
+      guard let accessToken = accessToken else { return }
+      
+      self.passwords.save(key: .accessToken, value: accessToken, to: .keychain)
     })
   }
 }
