@@ -36,4 +36,24 @@ final class Passwords {
       default: return false
     }
   }
+  
+  /// Returns the given `key` as the argument `type`. Returns `nil` if the value was not stored as the specififed `type`
+  /// - Parameters:
+  ///   - type: The type the `key` was saved as. **Required**
+  ///   - key: The key you're trying to access. **Required**
+  ///   - storageMethod: The method in which the key was stored: `keychain` or `user defaults`. Defaults to `keychain`.
+  func retrieve<T>(type: T.Type, fromKey key: PasswordKey, fromStorage storageMethod: PasswordType = .keychain) -> T? {
+    
+    switch storageMethod {
+      case .keychain: return Self.keychain[key.unlock()] as? T
+      case .defaults: return nil
+    }
+    
+  }
+}
+
+// MARK: - Static  -
+
+extension Passwords {
+  
 }
