@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
   
   // MARK: - Properties -
   
-  lazy var authManager: AuthManager = AuthManager()
+  private var authManager: Authorizable
   
   lazy var passwords: Passwords = Passwords()
   
@@ -30,7 +30,9 @@ final class LoginViewController: UIViewController {
   
   // MARK: - Init -
   
-  init() {
+  init(authManager: Authorizable = AuthManager()) {
+    self.authManager = authManager
+    
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -58,13 +60,13 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
   
   private func observeLoginButton() {
+    
     loginButtonTapped = loginView?.loginPressedPassthrough
       .receive(on: DispatchQueue.main)
-      .flatMap { [unowned self] _  in
+      .flatMap { [unowned self] event in
         return self.authManager.authorize(in: self)
     }
     .sink { [unowned self] accessToken in
-      print(accessToken)
       self.passwords.save(key: .accessToken, value: accessToken, to: .keychain)
     }
   }
