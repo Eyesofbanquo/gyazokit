@@ -19,7 +19,7 @@ final class GradientBackgroundLayer: CAGradientLayer {
   
   @available(*, unavailable, message: "Use the hex init instead")
   required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    fatalError("dont use this")
   }
   
 }
