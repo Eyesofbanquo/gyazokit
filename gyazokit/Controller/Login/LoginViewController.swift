@@ -14,9 +14,7 @@ final class LoginViewController: UIViewController {
   
   // MARK: - Views -
   
-  var loginView: LoginView? {
-    return self.view as? LoginView
-  }
+  private let loginView: LoginView
   
   // MARK: - Properties -
   
@@ -30,7 +28,9 @@ final class LoginViewController: UIViewController {
   
   // MARK: - Init -
   
-  init(authManager: Authorizable = AuthManager()) {
+  init(view: LoginView = LoginView(),
+       authManager: Authorizable = AuthManager()) {
+    self.loginView = view
     self.authManager = authManager
     
     super.init(nibName: nil, bundle: nil)
@@ -43,9 +43,7 @@ final class LoginViewController: UIViewController {
   // MARK: - Lifecycle -
   
   override func loadView() {
-    let view = LoginView()
-    
-    self.view = view
+    self.view = loginView
   }
   
   override func viewDidLoad() {
@@ -61,7 +59,7 @@ extension LoginViewController {
   
   private func observeLoginButton() {
     
-    loginButtonTapped = loginView?.loginPressedPassthrough
+    loginButtonTapped = loginView.loginPressedPassthrough
       .receive(on: DispatchQueue.main)
       .flatMap { [unowned self] event in
         return self.authManager.authorize(in: self)
