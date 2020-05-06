@@ -24,7 +24,7 @@ final class LoginView: UIView {
   
   // MARK: - Passthroughs -
   
-  lazy var loginPressedPassthrough: PassthroughSubject<UIControl.Event, Never> = PassthroughSubject<UIControl.Event, Never>()
+  lazy var loginPressedPassthrough: PassthroughSubject<UIButton, Never> = PassthroughSubject<UIButton, Never>()
   
   // MARK: - Init -
   
@@ -52,6 +52,6 @@ final class LoginView: UIView {
   @objc private func loginButtonTapped(_ sender: UIButton,
                                        forEvent event: UIControl.Event) {
     print(event)
-    loginPressedPassthrough.send(event)
+    loginPressedPassthrough.send(loginButton)
   }
 }

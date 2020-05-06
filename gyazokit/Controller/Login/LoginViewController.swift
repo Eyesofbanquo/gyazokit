@@ -36,6 +36,8 @@ final class LoginViewController: UIViewController {
     self.secrets = secrets
     
     super.init(nibName: nil, bundle: nil)
+    
+    observeLoginButton()
   }
   
   required init?(coder: NSCoder) {
@@ -51,7 +53,6 @@ final class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    observeLoginButton()
   }
 }
 
@@ -63,7 +64,7 @@ extension LoginViewController {
     
     loginButtonTapped = loginView.loginPressedPassthrough
       .receive(on: DispatchQueue.main)
-      .flatMap { [unowned self] event in
+      .flatMap { [unowned self] button -> Future<String?, Never> in
         return self.authManager.authorize(in: self)
     }
     .sink { [unowned self] accessToken in

@@ -13,7 +13,6 @@
 		D54A7499245FB65A00D9C817 /* gyazokit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D54A7497245FB65A00D9C817 /* gyazokit.xcdatamodeld */; };
 		D54A749B245FB65F00D9C817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A749A245FB65F00D9C817 /* Assets.xcassets */; };
 		D54A749E245FB65F00D9C817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54A749C245FB65F00D9C817 /* LaunchScreen.storyboard */; };
-		D54A74A9245FB65F00D9C817 /* gyazokitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74A8245FB65F00D9C817 /* gyazokitTests.swift */; };
 		D54A74B5245FC1DD00D9C817 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = D54A74B4245FC1DD00D9C817 /* OAuth2 */; };
 		D54A74B8245FC1EF00D9C817 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D54A74B7245FC1EF00D9C817 /* KeychainAccess */; };
 		D54A74BC245FC22500D9C817 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74BB245FC22500D9C817 /* AuthManager.swift */; };
@@ -38,6 +37,7 @@
 		D54A74F92460DCE700D9C817 /* gyazokitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74F82460DCE700D9C817 /* gyazokitUITests.swift */; };
 		D54A75012460E3CB00D9C817 /* Authorizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A75002460E3CB00D9C817 /* Authorizable.swift */; };
 		D54A75032462396700D9C817 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A75022462396700D9C817 /* Secret.swift */; };
+		D54A750624628DF600D9C817 /* LoginViewController_Integration_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A750524628DF600D9C817 /* LoginViewController_Integration_tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		D54A749D245FB65F00D9C817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D54A749F245FB65F00D9C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54A74A4245FB65F00D9C817 /* gyazokitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gyazokitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D54A74A8245FB65F00D9C817 /* gyazokitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gyazokitTests.swift; sourceTree = "<group>"; };
 		D54A74AA245FB65F00D9C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54A74BB245FC22500D9C817 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D54A74BE245FC2C000D9C817 /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		D54A74FA2460DCE700D9C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54A75002460E3CB00D9C817 /* Authorizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorizable.swift; sourceTree = "<group>"; };
 		D54A75022462396700D9C817 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		D54A750524628DF600D9C817 /* LoginViewController_Integration_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController_Integration_tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 		D54A74A7245FB65F00D9C817 /* gyazokitTests */ = {
 			isa = PBXGroup;
 			children = (
-				D54A74A8245FB65F00D9C817 /* gyazokitTests.swift */,
+				D54A750424628DD600D9C817 /* Login */,
 				D54A74AA245FB65F00D9C817 /* Info.plist */,
 			);
 			path = gyazokitTests;
@@ -327,6 +327,14 @@
 				D54A74FA2460DCE700D9C817 /* Info.plist */,
 			);
 			path = gyazokitUITests;
+			sourceTree = "<group>";
+		};
+		D54A750424628DD600D9C817 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D54A750524628DF600D9C817 /* LoginViewController_Integration_tests.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,7 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D54A74A9245FB65F00D9C817 /* gyazokitTests.swift in Sources */,
+				D54A750624628DF600D9C817 /* LoginViewController_Integration_tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
