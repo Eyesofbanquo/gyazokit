@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
   
   private var authManager: Authorizable
   
-  lazy var passwords: Passwords = Passwords()
+  private var secrets: AnySecret<PasswordKey, String>
   
   // MARK: - Subscribers -
   
@@ -29,9 +29,11 @@ final class LoginViewController: UIViewController {
   // MARK: - Init -
   
   init(view: LoginView = LoginView(),
-       authManager: Authorizable = AuthManager()) {
+       authManager: Authorizable = AuthManager(),
+       secrets: AnySecret<PasswordKey, String> = KeychainManager()) {
     self.loginView = view
     self.authManager = authManager
+    self.secrets = secrets
     
     super.init(nibName: nil, bundle: nil)
   }
@@ -65,7 +67,7 @@ extension LoginViewController {
         return self.authManager.authorize(in: self)
     }
     .sink { [unowned self] accessToken in
-      self.passwords.save(key: .accessToken, value: accessToken, to: .keychain)
+      self.secrets.save(key: .accessToken, value: accessToken)
     }
   }
   

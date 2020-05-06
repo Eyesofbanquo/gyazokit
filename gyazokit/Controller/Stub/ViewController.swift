@@ -19,7 +19,7 @@ class ViewController: UIViewController {
   
   lazy var authManager: AuthManager = AuthManager()
   
-  lazy var passwords: Passwords = Passwords()
+  lazy var passwords: KeychainManager = KeychainManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     authCancellable = authManager.authorize(in: self).receive(on: DispatchQueue.main).sink(receiveValue: { [unowned self] accessToken in
       guard let accessToken = accessToken else { return }
       
-      self.passwords.save(key: .accessToken, value: accessToken, to: .keychain)
+//      self.passwords.save(key: .accessToken, value: accessToken)
     })
   }
 }

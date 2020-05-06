@@ -20,7 +20,7 @@
 		D54A74BF245FC2C000D9C817 /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74BE245FC2C000D9C817 /* AuthInfo.swift */; };
 		D54A74C8245FC5E700D9C817 /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C7245FC5E700D9C817 /* image.json */; };
 		D54A74CA245FC5F600D9C817 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = D54A74C9245FC5F600D9C817 /* images.json */; };
-		D54A74CC245FC64100D9C817 /* Passwords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74CB245FC64100D9C817 /* Passwords.swift */; };
+		D54A74CC245FC64100D9C817 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74CB245FC64100D9C817 /* KeychainManager.swift */; };
 		D54A74CF2460827D00D9C817 /* PasswordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74CE2460827D00D9C817 /* PasswordType.swift */; };
 		D54A74D12460829100D9C817 /* PasswordKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74D02460829100D9C817 /* PasswordKey.swift */; };
 		D54A74D42460A55E00D9C817 /* Notification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74D32460A55E00D9C817 /* Notification+Ext.swift */; };
@@ -37,6 +37,7 @@
 		D54A74F12460C40A00D9C817 /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74F02460C40A00D9C817 /* LoginViewDelegate.swift */; };
 		D54A74F92460DCE700D9C817 /* gyazokitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A74F82460DCE700D9C817 /* gyazokitUITests.swift */; };
 		D54A75012460E3CB00D9C817 /* Authorizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A75002460E3CB00D9C817 /* Authorizable.swift */; };
+		D54A75032462396700D9C817 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A75022462396700D9C817 /* Secret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +73,7 @@
 		D54A74BE245FC2C000D9C817 /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
 		D54A74C7245FC5E700D9C817 /* image.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = image.json; sourceTree = "<group>"; };
 		D54A74C9245FC5F600D9C817 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
-		D54A74CB245FC64100D9C817 /* Passwords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passwords.swift; sourceTree = "<group>"; };
+		D54A74CB245FC64100D9C817 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		D54A74CE2460827D00D9C817 /* PasswordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordType.swift; sourceTree = "<group>"; };
 		D54A74D02460829100D9C817 /* PasswordKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordKey.swift; sourceTree = "<group>"; };
 		D54A74D32460A55E00D9C817 /* Notification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Ext.swift"; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		D54A74F82460DCE700D9C817 /* gyazokitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gyazokitUITests.swift; sourceTree = "<group>"; };
 		D54A74FA2460DCE700D9C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54A75002460E3CB00D9C817 /* Authorizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorizable.swift; sourceTree = "<group>"; };
+		D54A75022462396700D9C817 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D54A74CD2460826800D9C817 /* Types */,
-				D54A74CB245FC64100D9C817 /* Passwords.swift */,
+				D54A74CB245FC64100D9C817 /* KeychainManager.swift */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -261,6 +263,7 @@
 			children = (
 				D54A74CE2460827D00D9C817 /* PasswordType.swift */,
 				D54A74D02460829100D9C817 /* PasswordKey.swift */,
+				D54A75022462396700D9C817 /* Secret.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -471,7 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54A7493245FB65A00D9C817 /* ViewController.swift in Sources */,
-				D54A74CC245FC64100D9C817 /* Passwords.swift in Sources */,
+				D54A74CC245FC64100D9C817 /* KeychainManager.swift in Sources */,
 				D54A74D42460A55E00D9C817 /* Notification+Ext.swift in Sources */,
 				D54A74E52460BC7500D9C817 /* StackViewBuilder.swift in Sources */,
 				D54A74EF2460C2BE00D9C817 /* LabelBuilder.swift in Sources */,
@@ -481,6 +484,7 @@
 				D54A74E72460BE6B00D9C817 /* ButtonBuilder.swift in Sources */,
 				D54A74ED2460C1BD00D9C817 /* UIColor+.swift in Sources */,
 				D54A74EA2460BF7100D9C817 /* UIFont+.swift in Sources */,
+				D54A75032462396700D9C817 /* Secret.swift in Sources */,
 				D54A74DA2460B30700D9C817 /* LoginView.swift in Sources */,
 				D54A7491245FB65A00D9C817 /* SceneDelegate.swift in Sources */,
 				D54A74DF2460B35200D9C817 /* GradientBackgroundLayer.swift in Sources */,
