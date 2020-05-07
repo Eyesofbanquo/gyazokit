@@ -23,9 +23,9 @@ struct AuthResponse: Decodable {
   }
 }
 
-class AuthManager: ObservableObject {
+class AuthManager: ObservableObject, Authorizable {
   
-  let oauth2 = OAuth2CodeGrant(settings: [
+  private let oauth2 = OAuth2CodeGrant(settings: [
     "client_id": AuthInfo.clientID,
     "client_secret": AuthInfo.clientSecret,
     "authorize_uri": "https://api.gyazo.com/oauth/authorize",
@@ -35,9 +35,9 @@ class AuthManager: ObservableObject {
     "keychain": false
     ] as OAuth2JSON)
   
-  var loader: OAuth2DataLoader?
+  private var loader: OAuth2DataLoader?
   
-  var returnFromAuthCancellable: AnyCancellable?
+  private var returnFromAuthCancellable: AnyCancellable?
   
   // MARK: - Init -
   

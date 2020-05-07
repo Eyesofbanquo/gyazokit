@@ -38,6 +38,16 @@
                ReferencedContainer = "container:gyazokit.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D54A74F52460DCE700D9C817"
+               BuildableName = "gyazokitUITests.xctest"
+               BlueprintName = "gyazokitUITests"
+               ReferencedContainer = "container:gyazokit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

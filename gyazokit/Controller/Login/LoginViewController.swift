@@ -14,15 +14,13 @@ final class LoginViewController: UIViewController {
   
   // MARK: - Views -
   
-  var loginView: LoginView? {
-    return self.view as? LoginView
-  }
+  private let loginView: LoginView
   
   // MARK: - Properties -
   
-  lazy var authManager: AuthManager = AuthManager()
+  private var authManager: Authorizable
   
-  lazy var passwords: Passwords = Passwords()
+  private var secrets: AnySecret<PasswordKey, String>
   
   // MARK: - Subscribers -
   
@@ -30,8 +28,16 @@ final class LoginViewController: UIViewController {
   
   // MARK: - Init -
   
-  init() {
+  init(view: LoginView = LoginView(),
+       authManager: Authorizable = AuthManager(),
+       secrets: AnySecret<PasswordKey, String> = KeychainManager()) {
+    self.loginView = view
+    self.authManager = authManager
+    self.secrets = secrets
+    
     super.init(nibName: nil, bundle: nil)
+    
+    observeLoginButton()
   }
   
   required init?(coder: NSCoder) {
@@ -41,15 +47,12 @@ final class LoginViewController: UIViewController {
   // MARK: - Lifecycle -
   
   override func loadView() {
-    let view = LoginView()
-    
-    self.view = view
+    self.view = loginView
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    observeLoginButton()
   }
 }
 
@@ -58,14 +61,14 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
   
   private func observeLoginButton() {
-    loginButtonTapped = loginView?.loginPressedPassthrough
+    
+    loginButtonTapped = loginView.loginPressedPassthrough
       .receive(on: DispatchQueue.main)
-      .flatMap { [unowned self] _  in
+      .flatMap { [unowned self] button -> Future<String?, Never> in
         return self.authManager.authorize(in: self)
     }
     .sink { [unowned self] accessToken in
-      print(accessToken)
-      self.passwords.save(key: .accessToken, value: accessToken, to: .keychain)
+      self.secrets.save(key: .accessToken, value: accessToken)
     }
   }
   

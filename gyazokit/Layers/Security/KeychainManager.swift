@@ -6,10 +6,11 @@
 //  Copyright © 2020 Markim Shaw. All rights reserved.
 //
 
+import Combine
 import KeychainAccess
 
 /// This class is responsible for storing sensitive information into either the `keychain` or `user defaults`.
-final class Passwords {
+final class KeychainManager: AnySecret<PasswordKey, String> {
   
   // MARK: - Static -
   
@@ -22,9 +23,10 @@ final class Passwords {
     return keychain
   }()
   
+  // MARK: - Properties -
   /// Saves a key/value pair to either the keychain or the user defaults
   @discardableResult
-  func save(key: PasswordKey, value: String?, to type: PasswordType) -> Bool {
+  private func save(key: PasswordKey, value: String?, to type: PasswordType) -> Bool {
     guard let value = value else {
       return false
     }
@@ -42,7 +44,7 @@ final class Passwords {
   ///   - type: The type the `key` was saved as. **Required**
   ///   - key: The key you're trying to access. **Required**
   ///   - storageMethod: The method in which the key was stored: `keychain` or `user defaults`. Defaults to `keychain`.
-  func retrieve<T>(type: T.Type, fromKey key: PasswordKey, fromStorage storageMethod: PasswordType = .keychain) -> T? {
+  private func retrieve<T>(type: T.Type, fromKey key: PasswordKey, fromStorage storageMethod: PasswordType = .keychain) -> T? {
     
     switch storageMethod {
       case .keychain: return Self.keychain[key.unlock()] as? T
@@ -50,10 +52,15 @@ final class Passwords {
     }
     
   }
-}
-
-// MARK: - Static  -
-
-extension Passwords {
+  
+  override func save(key: Key, value: Val?) {
+    guard let value = value else { return }
+    
+    Self.keychain[key.unlock()] = value
+  }
+  
+  override func retrieve(key: Key) -> Val? {
+    return Self.keychain[key.unlock()]
+  }
   
 }
